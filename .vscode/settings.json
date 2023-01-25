@@ -1,0 +1,4 @@
+{
+	"clang-format.executable": "/usr/bin/clang-format",
+	"cmake.sourceDirectory": "${workspaceFolder}/3rdparty/boost/boost_1_70_0/boost/safe_numerics"
+}

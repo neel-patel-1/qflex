@@ -14,3 +14,4 @@ stat-manager
 stat-sample
 *.gz
 .DS_Store
+build/
