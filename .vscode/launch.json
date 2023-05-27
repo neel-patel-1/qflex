@@ -1,0 +1,139 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: [https://go.microsoft.com/fwlink/?linkid=830387](https://go.microsoft.com/fwlink/?linkid=830387)
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "QEMU launch qflex trace -- matmul",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/qemu/aarch64-softmmu/qemu-system-aarch64",
+			"args": [
+				"-machine", "virt,gic-version=3",
+				"-cpu", "cortex-a57",
+				"-smp", "1", "-m", "4096",
+				"-global", "virtio-blk-device.scsi=off",
+				"-device", "virtio-scsi-device,id=scsi",
+				"-rtc", "clock=vm", "-nographic",
+				"-drive", "if=none,file=/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2,id=hd0",
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash0.img", 
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash1.img",
+				"-device", "scsi-hd,drive=hd0",
+				"-device", "virtio-scsi-device",
+				"-netdev", "user,id=net1,hostfwd=tcp::2239-:22",
+				"-device", "virtio-net-device,mac=52:54:00:00:00:00,netdev=net1",
+				"-icount", "shift=0,sleep=off,align=off",
+				"-singlestep", "-d", "nochain,int",
+				"-flexus", "mode=trace,length=300,simulator=/home/n869p538/qflex/flexus/libKeenKraken.so,config=/home/n869p538/qflex/keen_run/user_postload,debug=dev",
+				"-loadext", "logged",
+				"-qflex_d", "loop=20,gen", "-ckpt", "every=20,end=100",
+				"-exton",
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/qemu/aarch64-softmmu",
+			"environment": [{"name": "LD_LIBRARY_PATH", "value": "/home/n869p538/spack/var/spack/environments/qflex/.spack-env/view/lib:/home/n869p538/qflex/flexus/boost_1_70_0-build/lib"}],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+			    {
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+			    },
+			    {
+				"description":  "Set Disassembly Flavor to Intel",
+				"text": "-gdb-set disassembly-flavor intel",
+				"ignoreFailures": true
+			    }
+			],
+		},
+
+		{
+			"name": "QEMU launch qemu",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/qemu/aarch64-softmmu/qemu-system-aarch64",
+			"args": [
+				"-machine", "virt,gic-version=3",
+				"-cpu", "cortex-a57",
+				"-smp", "1", "-m", "8G",
+				"-global", "virtio-blk-device.scsi=off",
+				"-device", "virtio-scsi-device,id=scsi",
+				"-rtc", "clock=vm", "-nographic",
+				"-drive", "if=none,file=/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2,id=hd0",
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash0.img", 
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash1.img",
+				"-device", "scsi-hd,drive=hd0",
+				"-device", "virtio-scsi-device",
+				"-netdev", "user,id=net1,hostfwd=tcp::2239-:22",
+				"-device", "virtio-net-device,mac=52:54:00:00:00:00,netdev=net1",
+				"-icount", "shift=0,sleep=off,align=off",
+				"-loadext", "32kb-loop3",
+				"-exton",
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/qemu/aarch64-softmmu",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+			    {
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+			    },
+			    {
+				"description":  "Set Disassembly Flavor to Intel",
+				"text": "-gdb-set disassembly-flavor intel",
+				"ignoreFailures": true
+			    }
+			],
+		},
+
+		{
+			"name": "QEMU launch qflex timing",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/qemu/aarch64-softmmu/qemu-system-aarch64",
+			"args": [
+				"-machine", "virt,gic-version=3",
+				"-cpu", "cortex-a57",
+				"-smp", "1", "-m", "8G",
+				"-global", "virtio-blk-device.scsi=off",
+				"-device", "virtio-scsi-device,id=scsi",
+				"-rtc", "clock=vm", "-nographic",
+				"-drive", "if=none,file=/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2,id=hd0",
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash0.img", 
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash1.img",
+				"-device", "scsi-hd,drive=hd0",
+				"-device", "virtio-scsi-device",
+				"-netdev", "user,id=net1,hostfwd=tcp::2239-:22",
+				"-device", "virtio-net-device,mac=52:54:00:00:00:00,netdev=net1",
+				"-icount", "shift=0,sleep=off,align=off",
+				"-singlestep", "-d", "nochain,int",
+				"-flexus", "mode=timing,length=2000000,simulator=/home/n869p538/qflex/flexus/libKnottyKraken.so,config=/home/n869p538/qflex/flexus/user_postload,debug=dev",
+				"-loadext", "logged",
+				"-qflex_d", "loop=20,gen", "-ckpt", "every=1000000,end=2000000",
+				"-exton",
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/qemu/aarch64-softmmu",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+			    {
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+			    },
+			    {
+				"description":  "Set Disassembly Flavor to Intel",
+				"text": "-gdb-set disassembly-flavor intel",
+				"ignoreFailures": true
+			    }
+			],
+		},
+	]
+}

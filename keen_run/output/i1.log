@@ -1,0 +1,118 @@
+WARNING: Image format was not specified for '/home/n869p538/qflex/images/ubuntu16/flash0.img' and probing guessed raw.
+         Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted.
+         Specify the 'raw' format explicitly to remove the restrictions.
+WARNING: Image format was not specified for '/home/n869p538/qflex/images/ubuntu16/flash1.img' and probing guessed raw.
+         Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted.
+         Specify the 'raw' format explicitly to remove the restrictions.
+parsing failed
+1 <ConfigurationManager.cpp:231> {0}- Initializing Flexus::ConfigurationManager...
+2 <ConfigurationManager.cpp:233> {0}- ConfigurationManager initializing
+3 <ComponentManager.cpp:176> {0}- Initializing Flexus::ComponentManager...
+4 <ComponentManager.cpp:178> {0}- ComponentManager initialized
+<cpus.c:1368> Flexus Simulator set!.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                    //
+//           ************                                                                             //
+//          **************                                                                            //
+//   *      **************      *                                                                     //
+//  **      ***  ****  ***     ***                                                                    //
+// ***      **************      ***                                                                   //
+// ****     **************     ****                                                                   //
+//  ******************************   ***********    *                                                 //
+//    *********        **********   *************  ***                                                //
+//      *****            *****      ***            ***       *****      *        *                    //
+//      ****              ****      ***            ***    ***********  ****    ****                   //
+//      ****               ***      **********     ***   ****     ****   ********                     //
+//      ****          *** ****      **********     ***   *************     ****                       //
+//       ****          ******       ***            ***   ***             ********                     //
+//        *****        *******      ***            ***    ****   ****   ****  ****                    //
+//           ****    ****   ***     ***            ***      ********   ***      ***                   //
+//                                                                                                    //
+//   QFlex (C) 2016-2020, Parallel Systems Architecture Lab, EPFL                                     //
+//   All rights reserved.                                                                             //
+//   Website: https://qflex.epfl.ch                                                                   //
+//   QFlex uses software developed externally:                                                        //
+//   [NS-3](https://www.gnu.org/copyleft/gpl.html)                                                    //
+//   [QEMU](http://wiki.qemu.org/License)                                                             //
+//   [SimFlex] (http://parsa.epfl.ch/simflex/)                                                        //
+//                                                                                                    //
+//   Redistribution and use in source and binary forms, with or without modification,                 //
+//   are permitted provided that the following conditions are met:                                    //
+//                                                                                                    //
+//       * Redistributions of source code must retain the above copyright notice,                     //
+//         this list of conditions and the following disclaimer.                                      //
+//       * Redistributions in binary form must reproduce the above copyright notice,                  //
+//         this list of conditions and the following disclaimer in the documentation                  //
+//         and/or other materials provided with the distribution.                                     //
+//       * Neither the name of the Parallel Systems Architecture Laboratory, EPFL,                    //
+//         nor the names of its contributors may be used to endorse or promote                        //
+//         products derived from this software without specific prior written                         //
+//         permission.                                                                                //
+//                                                                                                    //
+//   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND                  //
+//   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED                    //
+//   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE                           //
+//   DISCLAIMED. IN NO EVENT SHALL THE PARALLEL SYSTEMS ARCHITECTURE LABORATORY,                      //
+//   EPFL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR                      //
+//   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE                  //
+//   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)                      //
+//   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT                       //
+//   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF                 //
+//   THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                     //
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//   QFlex simulator - Built as Keen Kraken v1.0
+
+5 <startup.cpp:236> {0}- Initializing Flexus.
+6 <startup.cpp:238> {0}- Compiled with Boost: 1.70.0
+7 <startup.cpp:110> {0}- Instantiating Flexus components with SystemWidth = 1
+8 <ComponentManager.cpp:85> {0}- Instantiating system with a width factor of: 1
+9 <DecoupledFeeder.hpp:80> {0}- feeder port ToNAW is not wired
+10 <QemuTracer.cpp:627> {0}- Initializing QemuTracerManager.
+11 <QemuTracer.cpp:706> {0}- Connecting to DMA memory map
+12 <QemuTracer.cpp:638> {0}- Done initializing QemuTracerManager.
+13 <BPWarm.hpp:67> {0}- bpwarm port InsnOut is not wired
+14 <FastCache.hpp:106> {0}- L1d port SnoopOutI is not wired
+15 <FastCache.hpp:106> {0}- L1d port SnoopOutD is not wired
+16 <FastCache.hpp:106> {0}- L1d port Reads is not wired
+17 <FastCache.hpp:106> {0}- L1d port Writes is not wired
+18 <FastCache.hpp:106> {0}- L1i port SnoopOutI is not wired
+19 <FastCache.hpp:106> {0}- L1i port SnoopOutD is not wired
+20 <FastCache.hpp:106> {0}- L1i port Reads is not wired
+21 <FastCache.hpp:106> {0}- L1i port Writes is not wired
+22 <FastCache.hpp:106> {0}- L1i port RegionNotify is not wired
+23 <FastCMPCache.hpp:97> {0}- L2 port RegionNotifyOut is not wired
+24 <breakpoint_tracker.cpp:504> {0}- Successfully registered RegressionTrackerMagicBreakpoint with QEMU, cpu_id = 0, struct id = 1
+25 <MMU.hpp:82> {0}- mmu port iTranslationReply is not wired
+26 <MMU.hpp:82> {0}- mmu port dTranslationReply is not wired
+27 <MMU.hpp:82> {0}- mmu port MemoryRequestOut is not wired
+28 <MMU.hpp:82> {0}- mmu port ResyncOut is not wired
+29 <wiring.cpp:87> {0}-  initializing Parameters...
+30 <flexus.cpp:421> {0}- Set stat interval to : 10000000
+31 <flexus.cpp:441> {0}- Set profile interval to : 10000000
+32 <flexus.cpp:446> {0}- Set timestamp interval to : 1000000
+Formatting '/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2-17E169A5-i1-tmp', fmt=qcow2 size=21474836480 backing_file=/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2 backing_fmt=qcow2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
+33 <configuration.hpp:210> {0}- Bad Lexical Cast attempting to set dynamic parameter.
+WARNING: Unable to set parameter CacheLevel to eL1
+34 <configuration.hpp:210> {0}- Bad Lexical Cast attempting to set dynamic parameter.
+WARNING: Unable to set parameter CacheLevel to eL1I
+35 <configuration.hpp:210> {0}- Bad Lexical Cast attempting to set dynamic parameter.
+WARNING: Unable to set parameter CacheLevel to eL2
+36 <ComponentManager.cpp:100> {0}- Initializing 8 components...
+37 <ComponentManager.cpp:105> {0}- Component 1: Initializing sys-feeder
+38 <flexus.cpp:300> {0}- Timestamp: Wed May 24 16:51:28 2023
+
+39 <ComponentManager.cpp:105> {0}- Component 2: Initializing sys-bpwarm
+40 <ComponentManager.cpp:105> {0}- Component 3: Initializing sys-L1d
+41 <FastCacheImpl.cpp:177> {0}- Running with MT width 1
+42 <ComponentManager.cpp:105> {0}- Component 4: Initializing sys-L1i
+43 <ComponentManager.cpp:105> {0}- Component 5: Initializing sys-L2
+44 <FastCMPCacheImpl.cpp:266> {0}- Running with CMP width 1
+45 <FastCMPCacheImpl.cpp:305> {0}- Coherence Unit is: 64
+46 <FastCMPCacheImpl.cpp:306> {0}- sizeof(PhysicalMemoryAddress) = 8
+47 <ComponentManager.cpp:105> {0}- Component 6: Initializing sys-memory
+48 <ComponentManager.cpp:105> {0}- Component 7: Initializing sys-magic-break
+49 <ComponentManager.cpp:105> {0}- Component 8: Initializing sys-mmu
+Exiting because of break_simulation
+With exit message: Reached the end of the simulation
