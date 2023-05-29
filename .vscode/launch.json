@@ -5,6 +5,57 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "QEMU launch qflex XFM SIM",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/qemu/aarch64-softmmu/qemu-system-aarch64",
+			"args": [
+				"-machine", "virt,gic-version=3",
+				"-cpu", "cortex-a57",
+				"-smp", "1", 
+				"-m", "4096",
+				"-global", "virtio-blk-device.scsi=off",
+				"-device", "virtio-scsi-device,id=scsi",
+				"-rtc", "clock=vm", 
+				"-nographic",
+				"-drive", "file=/home/n869p538/qflex/images/ubuntu16/ubuntu.qcow2,id=hd0,if=none",
+				"-device", "scsi-hd,drive=hd0",
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash0.img", 
+				"-pflash", "/home/n869p538/qflex/images/ubuntu16/flash1.img",
+				"-netdev", "user,id=net1,hostfwd=tcp::2222-:22",
+				"-device", "virtio-net-device,mac=52:54:00:00:00:00,netdev=net1",
+				"-icount", "shift=0,sleep=off",
+				"-singlestep", "-d", "nochain,int",
+				"-flexus", "mode=timing,length=999,simulator=/home/n869p538/qflex/flexus/libXFMKraken.so,config=/home/n869p538/qflex/keen_run/user_postload",
+				"-loadext", "matmul",
+				"-name", "i1",
+				"-nographic",
+				"-serial", "telnet:localhost:5551,server,nowait",
+				"-qmp",  "unix:/tmp/qmp-sock,server,nowait",
+				"-exton",
+				"-qflex_d", "loop=20,ff", 
+				// "-ckpt", "every=20,end=100",
+	
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/keen_run",
+			"environment": [{"name": "LD_LIBRARY_PATH", "value": "/home/n869p538/spack/var/spack/environments/qflex/.spack-env/view/lib:/home/n869p538/qflex/flexus/boost_1_70_0-build/lib"}],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+			    {
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+			    },
+			    {
+				"description":  "Set Disassembly Flavor to Intel",
+				"text": "-gdb-set disassembly-flavor intel",
+				"ignoreFailures": true
+			    }
+			],
+		},
+		{
 			"name": "QEMU launch qflex trace -- matmul",
 			"type": "cppdbg",
 			"request": "launch",
