@@ -2,6 +2,11 @@
 
 # Tested on Ubuntu 22.04 #
 
+## Setup
+```sh
+git submodule update --init --recursive .
+```
+
 QFlex is an instrumentation framework with several tools for different use cases. We support trace-based simulation to quickly instrument existing QEMU images, timing models to simulate multi-core CPU microarchitectures in detail and an FPGA-accelerating mode which enables high-performing instrumented code. We based our framework on QEMU, a widely-used machine emulator, which is able to boot any machine and execute unmodified applications and operating systems. 
 
 More information is available on the QFlex [website][qfw].
